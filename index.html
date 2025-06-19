@@ -13,7 +13,6 @@
     <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                <!-- Removed Name -->
                 <div class="flex items-center">
                     <!-- Empty div to maintain flex structure -->
                 </div>
@@ -43,7 +42,7 @@
             <p class="text-lg sm:text-xl mb-6">Computer Science Student | Software Engineer | AI/ML | Fintech </p>
             <div class="space-x-4">
                 <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">Get in Touch</a>
-                <a href="https://raw.githubusercontent.com/MuhammadAbdullah-10/MuhammadAbdullah-10.github.io/main/MuhammadAbdullah_resume.pdf" target="_blank" class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">View Resume</a>
+                <a href="#" id="viewResume" class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">View Resume</a>
             </div>
         </div>
     </section>
@@ -195,15 +194,15 @@
                             <h3 class="text-lg font-semibold text-white">Unsupervised Learning, Recommenders</h3>
                             <p class="text-gray-300">DeepLearning.AI, June 2025</p>
                         </div>
-                       <!-- <button onclick="showCertificate('Unsupervised Learning, Recommenders, DeepLearning.AI, June 2025')" class="bg-teal-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-teal-600 transition">View Credentials</button>-->
+                        <!-- <button onclick="showCertificate('Unsupervised Learning, Recommenders, DeepLearning.AI, June 2025')" class="bg-teal-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-teal-600 transition">View Credentials</button> -->
                     </li>
-                <!--   <li class="bg-gray-800 p-4 rounded-lg shadow-md flex justify-between items-center">
+                    <!-- <li class="bg-gray-800 p-4 rounded-lg shadow-md flex justify-between items-center">
                         <div>
                             <h3 class="text-lg font-semibold text-white">New Certificate Placeholder</h3>
                             <p class="text-gray-300">Institution, June 2025</p>
                         </div>
                         <button onclick="showCertificate('New Certificate Placeholder, Institution, June 2025')" class="bg-teal-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-teal-600 transition">View Credentials</button>
-                    </li>-->
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -267,6 +266,18 @@
         function showCertificate(certDetails) {
             alert(`Certificate Details: ${certDetails}\nNote: Credential available upon request. Contact me for more information.`);
         }
+
+        // Handle Resume View Click
+        document.getElementById('viewResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Your resume will now be downloaded.');
+            const link = document.createElement('a');
+            link.href = 'https://raw.githubusercontent.com/MuhammadAbdullah-10/MuhammadAbdullah-10.github.io/main/MuhammadAbdullah_resume.pdf';
+            link.download = 'MuhammadAbdullah_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 </body>
 </html>
